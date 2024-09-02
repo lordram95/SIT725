@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--Import Google Icon Font-->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <!--Import materialize.css-->
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="css/materialize.min.css"
+      media="screen,projection"
+    />
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style>
+      .responsive-img {
+        width: 100%;
+        height: auto;
+      }
+    </style>
+  </head>
+
+  <body class="main-body #fce4ec pink lighten-5">
+    <nav>
+      <div class="nav-wrapper #80cbc4 teal lighten-3">
+        <a href="#" class="brand-logo"
+          ><i class="material-icons left">pets</i>Pet Details Collector</a
+        >
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li>
+            <a
+              class="waves-effect waves-light btn modal-trigger #9575cd deep-purple lighten-2"
+              href="#addModal"
+              ><i class="material-icons left">cloud</i>Add New Pet</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="row">
+        <div class="col s12 center-align">
+          <h2 id="heading">Welcome to Pet Details Collector</h2>
+          <p class="flow-text">This will collects your pet details.</p>
+          <img src="Images/pet1.jpg" class="responsive-img" />
+        </div>
+      </div>
+      <div class="row" id="card-section"></div>
+    </div>
+
+    <div class="container">
+      <div class="row" id="card-section"></div>
+    </div>
+
+    <div id="addModal" class="modal">
+      <div class="modal-content #fce4ec pink lighten-5">
+        <h4>Add Pet Details</h4>
+
+        <div class="row">
+          <form class="col s12">
+            <div class="row">
+              <div class="input-field col s12">
+                <i class="material-icons prefix">pets</i>
+                <input id="pet-name" type="text" class="validate" />
+                <label for="pet-name">Pet Name</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <i class="material-icons prefix">pets</i>
+                <input id="pet-type" type="text" class="validate" />
+                <label for="pet-type">Pet Type</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <i class="material-icons prefix">pets</i>
+                <input id="pet-age" type="number" class="validate" />
+                <label for="pet-age">Age</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <i class="material-icons prefix">person</i>
+                <input id="pet-owner-name" type="text" class="validate" />
+                <label for="pet-owner-name">Owner's Name</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <i class="material-icons prefix">location_on</i>
+                <textarea
+                  id="location"
+                  type="number"
+                  class="materialize-textarea validate"
+                ></textarea>
+                <label for="location">Location</label>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="input-field col s12">
+                <p class="red-text text-lighten-1" id="error-msg"></p>
+              </div>
+            </div>
+
+            <button
+              class="btn waves-effect waves-light #1e88e5 blue darken-1"
+              type="button"
+              name="action"
+              id="save-details"
+            >
+              Pet Details
+              <i class="material-icons right">pets</i>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- socket IO Served by the server -->
+    <script src="/socket.io/socket.io.js"></script>
+    <!--JavaScript at end of body for optimized loading-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script type="text/javascript" src="js/env.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+
+    
+  </body>
+</html>
